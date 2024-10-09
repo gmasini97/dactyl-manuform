@@ -22,13 +22,13 @@
 (def centercol 4)                      ; controls left-right tilt / tenting (higher number is more tenting)
 (def tenting-angle (/ π 12))           ; or, change this for more precise tenting control
 
-(def pinky-15u true)                   ; controls whether the outer column uses 1.5u keys
+(def pinky-15u false)                   ; controls whether the outer column uses 1.5u keys
 (def first-15u-row 0)                  ; controls which should be the first row to have 1.5u keys on the outer column
 (def last-15u-row 3)                   ; controls which should be the last row to have 1.5u keys on the outer column
 
 (def extra-row true)                   ; adds an extra bottom row to the outer column(s)
 (def inner-column true)                ; adds an extra inner column (two less rows than nrows)
-(def thumb-style "cf")                 ; toggles between "manuform", "mini", and "cf" thumb cluster
+(def thumb-style "manuform")                 ; toggles between "manuform", "mini", and "cf" thumb cluster
 
 (def column-style :standard)
 
@@ -43,7 +43,7 @@
           (>= column 4) [0 -12 5.64]   ; original [0 -5.8 5.64]
           :else [0 0 0])))
 
-(def thumb-offsets [6 -3 7])
+(def thumb-offsets [5 -3 7])
 
 (def keyboard-z-offset 8)              ; controls overall height; original=9 with centercol=3; use 16 for centercol=2
 
@@ -52,7 +52,7 @@
 
 (def wall-z-offset -8)                 ; length of the first downward-sloping part of the wall (negative)
 (def wall-xy-offset 5)                 ; offset in the x and/or y direction for the first downward-sloping part of the wall (negative)
-(def wall-thickness 2)                 ; wall thickness parameter; originally 5
+(def wall-thickness 4)                 ; wall thickness parameter; originally 5
 
 ; If you use Cherry MX or Gateron switches, this can be turned on.
 ; If you use other switches such as Kailh, you should set this as false
@@ -1354,11 +1354,11 @@
          (screw-insert (+ 1 innercol-offset) lastrow         bottom-radius top-radius height screw-offset-bm)))
 
 ; Hole Depth Y: 4.4
-(def screw-insert-height 6)
+(def screw-insert-height 12)
 
 ; Hole Diameter C: 4.1-4.4
 (def screw-insert-bottom-radius (/ 4.0 2))
-(def screw-insert-top-radius (/ 3.9 2))
+(def screw-insert-top-radius (/ 3.7 2))
 (def screw-insert-holes  (screw-insert-all-shapes screw-insert-bottom-radius screw-insert-top-radius screw-insert-height))
 
 ; Wall Thickness W:\t1.65
